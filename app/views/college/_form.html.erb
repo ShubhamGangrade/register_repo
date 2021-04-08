@@ -1,0 +1,11 @@
+<%= form_with(model: @college) do |form| %>
+<%= form.hidden_field :lecture_id, value: params[:lecture_id] %>
+ <div class="field">
+    <%= form.label :"College Name" %>
+    <%= form.text_field :name, autofocus: true, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  <% end %>

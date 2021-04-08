@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lectures</h1>
+
+<div style="width: 100%">
+  <div style="float: left; width: 50%"> <table>
+  <thead>
+    <tr>
+      <th>Lecture ID</th>
+      <th>Subject</th>
+      <th>Created_At</th>
+      <th colspan="4"> Action </th>
+    </tr>
+  </thead>
+
+  <tbody> 
+    <% @lectures.each do |lecture| %>
+      <tr>
+        <td><%= lecture.id %></td>
+        <td><%= lecture.subject %></td>
+        <td><%= lecture.created_time %></td>
+        <td><%= link_to 'Show', lecture %></td>
+        <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
+        <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> 
+          <% if !@current_lectures_id.include?(lecture.id)%>
+            <%= link_to 'Add to My Lectures', lectures_path(lecture_id: lecture.id) %>
+          <% end %> 
+        </td>
+    <% end %>
+  </tbody>
+</table>
+
+               </div>
+                <% if params[:lecture_id] %>
+                 <div style="float: right; width: 50%"> 
+                   My Form will come here
+                   <%= render 'college/form' %>
+                 </div>
+                 <% end %>
+               </div>
+
+<table>
+  <thead>
+    <tr>
+    <th> S.No. </th>
+    <th> My Personal Lectures </th>
+    <th> Lecture ID </th>
+    <th> College Name </th>
+    <th> Action </th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @colleges.each_with_index do|college, index| %>
+      <tr>
+        <td><%= index +1 %></td>
+        <td><%= college.lecture.subject %></td>
+        <td><%= %></td>
+        <td><%= college.name %></td>
+        <td><%= link_to 'Destroy', college_path(college), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lecture', new_lecture_path %>

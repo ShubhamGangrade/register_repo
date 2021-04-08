@@ -1,0 +1,12 @@
+<h1><%= @post.call_method %></h1>
+
+
+<h1><%= @abcd %></h1>
+
+<h1><%= @post.content %></h1>
+
+<h2>Comments:</h2>
+  <%= render "comments/comment", abc: @post %>
+
+<h2>Add Comments:</h2>
+  <%= render "comments/form", abc: @post %>

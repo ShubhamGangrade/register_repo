@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @lecture.subject %>
+</p>
+
+<h2>Comments:</h2>
+  <%= render "comments/comment", abc: @lecture %>
+
+<h2>Add Comments:</h2>
+  <%= render "comments/form", abc: @lecture %>
+
+
+<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<%= link_to 'Back', lectures_path %>

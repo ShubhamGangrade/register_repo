@@ -1,0 +1,8 @@
+<h1>Root Page</h1>
+Date And Time - <%= time %>
+<h2>Child Name</h2>
+<% @children.each do |i| %>
+     <p>
+     	<%= @children.index(i) + 1 %>...<%= i.username %>
+     </p>
+<% end %>

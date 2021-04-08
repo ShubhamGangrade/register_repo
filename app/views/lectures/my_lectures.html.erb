@@ -1,0 +1,23 @@
+<h1> My Personal Lecture </h1>
+
+<table>
+  <thead>
+    <tr>
+    <th> S.No. </th>
+    <th> My Personal Lectures </th>
+    <th> Lecture ID </th>
+    <th> Action </th>
+    </tr>
+  </thead>
+  <tbody>
+      <% current_user.lectures.each do|lecture| %>
+      <tr>
+        <td><%= current_user.lectures.index(lecture) +1 %></td>
+        <td><%= lecture.subject %></td>
+        <td><%= lecture.id %></td>
+        <td><%= link_to 'Remove', lectures_lecture_path(lecture), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+           <% end %>
+  </tbody>
+</table>
+

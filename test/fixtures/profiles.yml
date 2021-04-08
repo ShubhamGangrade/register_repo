@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone: 1
+  address: MyString
+  school: MyString
+  school_percentage: 1
+  graduation: MyString
+  graduation_percentage: 1
+
+two:
+  phone: 1
+  address: MyString
+  school: MyString
+  school_percentage: 1
+  graduation: MyString
+  graduation_percentage: 1
